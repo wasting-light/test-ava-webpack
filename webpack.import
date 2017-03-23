@@ -1,0 +1,6 @@
+var sourceFiles = require.context('./src', true, /\.js$/);
+sourceFiles.keys().forEach(sourceFiles);
+
+var testFiles = require.context('./test', true, /\.js$/);
+testFiles.keys().forEach(test);
+
