@@ -1,6 +1,6 @@
 const fs = require('fs')
 const externals = require('webpack-node-externals')
-const { join } = require('path')
+const { join } =  require('path')
 
 module.exports = {
   entry: './webpack.import',
@@ -16,8 +16,15 @@ module.exports = {
         test: /\.js$/,
         exclude: /node_modules/,
         use: [
-          'file-loader?name=[path][name].[ext]',
-          'babel-loader'
+          {
+            loader: 'file-loader',
+            options: {
+              name: '[path][name].[ext]'
+            }
+          },
+          {
+            loader: 'babel-loader'
+          }
         ]
       }
     ]

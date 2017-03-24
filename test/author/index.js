@@ -1,10 +1,11 @@
 import test from 'ava'
 import { register } from '../../src/author'
 
-test('should register author', () => {
-  return Promise.resolve()
+test('should register author', async (t) => {
+  const x = await Promise.resolve()
     .then(register)
     .then(() => 123)
-    .then(console.log)
+
+  console.log('x', x)
 })
 
